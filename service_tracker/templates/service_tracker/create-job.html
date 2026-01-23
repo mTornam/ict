@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header Section -->
+        <div class="mb-8">
+            <div class="flex items-center">
+                <h1 class="text-3xl font-bold text-gray-900">Create New Service Record</h1>
+            </div>
+            <p class="mt-2 text-sm text-gray-600">Fill in the details below to create a new service record.</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-white shadow-sm rounded-lg">
+            <div class="px-6 py-8">
+                <form action="" method="post" class="space-y-6">
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                    <div class="rounded-md bg-red-50 p-4 md:col-span-2">
+                        <div class="flex">
+                            <div class="shrink-0">
+                                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-medium text-red-800">
+                                    There were some errors with your submission:
+                                </h3>
+                                <div class="mt-2 text-sm text-red-700">
+                                    <ul role="list" class="list-disc pl-5 space-y-1">
+                                        {% for error in form.non_field_errors %}
+                                        <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {% for field in form %}
+                        <div class="{% if field.field.widget.input_type == 'checkbox' %}md:col-span-2{% endif %}">
+                            <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
+                                {{ field.label }}
+                                {% if field.field.required %}
+                                <span class="text-red-500">*</span>
+                                {% endif %}
+                            </label>
+
+                            <div class="mt-1">
+                                {% if field.errors %}
+                                <div class="mb-2">
+                                    {% for error in field.errors %}
+                                    <p class="text-sm text-red-600">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+
+                            {% if field.field.widget.input_type == 'text' or field.field.widget.input_type == 'email' or field.field.widget.input_type == 'password' %}
+                            <input type="{{ field.field.widget.input_type }}"
+                                   name="{{ field.name }}"
+                                   id="{{ field.id_for_label }}"
+                                   value="{{ field.value|default_if_none:'' }}"
+                                   class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm {% if field.errors %}border-red-300{% endif %}"
+                                    {% if field.field.required %}required{% endif %}>
+                                {% elif field.field.widget.input_type == 'textarea' %}
+                            <textarea name="{{ field.name }}"
+                                      id="{{ field.id_for_label }}"
+                                      rows="4"
+                                      class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm {% if field.errors %}border-red-300{% endif %}"
+                                      {% if field.field.required %}required{% endif %}>{% if field.value %}{{ field.value }}{% endif %}</textarea>
+                                {% elif field.field.widget.input_type == 'select' %}
+                            <select name="{{ field.name }}"
+                                    id="{{ field.id_for_label }}"
+                                    class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm {% if field.errors %}border-red-300{% endif %}"
+                                    {% if field.field.required %}required{% endif %}>
+                                    {% for option_value, option_label in field.field.choices %}
+                                <option value="{{ option_value }}" {% if field.value == option_value %}selected{% endif %}>{{ option_label }}</option>
+                                    {% endfor %}
+                                </select>
+                                {% elif field.field.widget.input_type == 'checkbox' %}
+                                <div class="inline-flex items-center">
+                                <input type="checkbox"
+                                       name="{{ field.name }}"
+                                       id="{{ field.id_for_label }}"
+                                       {% if field.value %}checked{% endif %}
+                                       class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded {% if field.errors %}border-red-300{% endif %}">
+                                </div>
+                                {% else %}
+                                {{ field }}
+                                {% endif %}
+                            </div>
+
+                            {% if field.help_text %}
+                            <p class="mt-1 text-sm text-gray-500">{{ field.help_text }}</p>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4 md:col-span-2">
+                        <button type="submit"
+                            class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                            Create Service Record
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Back Link -->
+        <div class="mt-6 text-center">
+            <a href="{% url 'service_tracker:index' %}"
+                class="text-sm text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                ← Back to Service Records
+            </a>
+        </div>
+    </div>
+{% endblock %}

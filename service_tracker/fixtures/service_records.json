@@ -1,0 +1,326 @@
+[
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 1,
+    "fields": {
+      "requester_name": "Alice Mensah",
+      "requester_contact": "0245550001",
+      "device_name": "Dell Inspiron 3501",
+      "device_type": "laptop",
+      "problem_type": "software",
+      "problem_desc": "Cannot install updates",
+      "district": "legon",
+      "room_number": "101",
+      "received_at": "2026-01-15T09:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 2,
+    "fields": {
+      "requester_name": "Kwame Boateng",
+      "requester_contact": "0245550002",
+      "device_name": "HP Pavilion",
+      "device_type": "laptop",
+      "problem_type": "hardware",
+      "problem_desc": "Battery not charging",
+      "district": "adenta",
+      "room_number": "102",
+      "received_at": "2026-01-15T10:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 3,
+    "fields": {
+      "requester_name": "Ama Owusu",
+      "requester_contact": "0245550003",
+      "device_name": "Lenovo AIO 520",
+      "device_type": "aio",
+      "problem_type": "network",
+      "problem_desc": "No internet connectivity",
+      "district": "makola",
+      "room_number": "103",
+      "received_at": "2026-01-15T11:00:00Z",
+      "returned_at": "2026-01-16T14:00:00Z",
+      "received_by": "IT_John",
+      "is_resolved": true
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 4,
+    "fields": {
+      "requester_name": "Kojo Nyarko",
+      "requester_contact": "0245550004",
+      "device_name": "Dell Monitor 24\"",
+      "device_type": "monitor",
+      "problem_type": "hardware",
+      "problem_desc": "Screen flickering",
+      "district": "dodowa",
+      "room_number": "104",
+      "received_at": "2026-01-15T11:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 5,
+    "fields": {
+      "requester_name": "Esi Adom",
+      "requester_contact": "0245550005",
+      "device_name": "Lenovo System Unit",
+      "device_type": "system unit",
+      "problem_type": "software",
+      "problem_desc": "Blue screen on startup",
+      "district": "mampong",
+      "room_number": "105",
+      "received_at": "2026-01-15T12:00:00Z",
+      "returned_at": "2026-01-16T09:00:00Z",
+      "received_by": "IT_John",
+      "is_resolved": true
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 6,
+    "fields": {
+      "requester_name": "Yaw Agyeman",
+      "requester_contact": "0245550006",
+      "device_name": "HP Monitor 22\"",
+      "device_type": "monitor",
+      "problem_type": "hardware",
+      "problem_desc": "No display",
+      "district": "kwabenya",
+      "room_number": "106",
+      "received_at": "2026-01-15T12:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 7,
+    "fields": {
+      "requester_name": "Abena Kusi",
+      "requester_contact": "0245550007",
+      "device_name": "MacBook Pro",
+      "device_type": "laptop",
+      "problem_type": "software",
+      "problem_desc": "Cannot connect to VPN",
+      "district": "teshie",
+      "room_number": "107",
+      "received_at": "2026-01-15T13:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 8,
+    "fields": {
+      "requester_name": "Kofi Asare",
+      "requester_contact": "0245550008",
+      "device_name": "Custom PC",
+      "device_type": "system unit",
+      "problem_type": "hardware",
+      "problem_desc": "Fan making noise",
+      "district": "roman ridge",
+      "room_number": "108",
+      "received_at": "2026-01-15T13:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 9,
+    "fields": {
+      "requester_name": "Akua Badu",
+      "requester_contact": "0245550009",
+      "device_name": "Dell AIO 3000",
+      "device_type": "aio",
+      "problem_type": "network",
+      "problem_desc": "WiFi drops intermittently",
+      "district": "legon",
+      "room_number": "109",
+      "received_at": "2026-01-15T14:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 10,
+    "fields": {
+      "requester_name": "Selina Appiah",
+      "requester_contact": "0245550010",
+      "device_name": "HP EliteBook",
+      "device_type": "laptop",
+      "problem_type": "software",
+      "problem_desc": "OS not booting",
+      "district": "adenta",
+      "room_number": "110",
+      "received_at": "2026-01-15T14:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 11,
+    "fields": {
+      "requester_name": "Daniel Tetteh",
+      "requester_contact": "0245550011",
+      "device_name": "Monitor LG 27\"",
+      "device_type": "monitor",
+      "problem_type": "hardware",
+      "problem_desc": "Dead pixels",
+      "district": "makola",
+      "room_number": "111",
+      "received_at": "2026-01-15T15:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 12,
+    "fields": {
+      "requester_name": "Nana Yaa",
+      "requester_contact": "0245550012",
+      "device_name": "Custom Laptop",
+      "device_type": "laptop",
+      "problem_type": "software",
+      "problem_desc": "Slow performance",
+      "district": "teshie",
+      "room_number": "112",
+      "received_at": "2026-01-15T15:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 13,
+    "fields": {
+      "requester_name": "Emmanuel Kwesi",
+      "requester_contact": "0245550013",
+      "device_name": "System Unit Dell",
+      "device_type": "system unit",
+      "problem_type": "hardware",
+      "problem_desc": "Power supply failure",
+      "district": "mampong",
+      "room_number": "113",
+      "received_at": "2026-01-15T16:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 14,
+    "fields": {
+      "requester_name": "Abigail Osei",
+      "requester_contact": "0245550014",
+      "device_name": "MacBook Air",
+      "device_type": "laptop",
+      "problem_type": "network",
+      "problem_desc": "Cannot connect to WiFi",
+      "district": "kwabenya",
+      "room_number": "114",
+      "received_at": "2026-01-15T16:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 15,
+    "fields": {
+      "requester_name": "Kojo Mensah",
+      "requester_contact": "0245550015",
+      "device_name": "Monitor Samsung 24\"",
+      "device_type": "monitor",
+      "problem_type": "hardware",
+      "problem_desc": "Brightness issue",
+      "district": "dodowa",
+      "room_number": "115",
+      "received_at": "2026-01-15T17:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 16,
+    "fields": {
+      "requester_name": "Akosua Nyarko",
+      "requester_contact": "0245550016",
+      "device_name": "AIO HP 400",
+      "device_type": "aio",
+      "problem_type": "software",
+      "problem_desc": "Antivirus not updating",
+      "district": "roman ridge",
+      "room_number": "116",
+      "received_at": "2026-01-15T17:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 17,
+    "fields": {
+      "requester_name": "Yaw Mensah",
+      "requester_contact": "0245550017",
+      "device_name": "Laptop Lenovo ThinkPad",
+      "device_type": "laptop",
+      "problem_type": "network",
+      "problem_desc": "VPN disconnects",
+      "district": "adenta",
+      "room_number": "117",
+      "received_at": "2026-01-15T18:00:00Z",
+      "returned_at": null,
+      "received_by": "IT_John",
+      "is_resolved": false
+    }
+  },
+  {
+    "model": "service_tracker.servicerecord",
+    "pk": 18,
+    "fields": {
+      "requester_name": "Abena Asante",
+      "requester_contact": "0245550018",
+      "device_name": "Dell System Unit",
+      "device_type": "system unit",
+      "problem_type": "hardware",
+      "problem_desc": "Hard drive failure",
+      "district": "regional office",
+      "room_number": "118",
+      "received_at": "2026-01-15T18:30:00Z",
+      "returned_at": null,
+      "received_by": "IT_Jane",
+      "is_resolved": false
+    }
+  }
+]

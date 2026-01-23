@@ -1,0 +1,7 @@
+__pycache__/
+venv
+ChatGPT1.pdf 
+ChatGPT.pdf
+node_modules
+jobs
+accounts/migrations
