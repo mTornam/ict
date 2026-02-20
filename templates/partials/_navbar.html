@@ -1,0 +1,18 @@
+<nav class="bg-white shadow-sm border-b border-gray-200 flex justify-between items-center shrink-0">
+    <!-- Company Logo -->
+    <div class="bg-blue-900 px-2">
+        <img src="https://ecg.com.gh/images/site/ecg_logo.png" class="w-60" />
+    </div>
+    <!-- User Greeting -->
+    <div class="text-sm px-6 py-4 text-gray-700 font-medium space-x-2">
+        Hello, <b>{{request.user.username|default:"Guest"}}!</b>
+        <span>
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'accounts:login' %}">Login</a>
+            {% else %}
+            <button onclick="document.getElementById('logout-modal').classList.remove('hidden')">Logout</button>
+            {% endif %}
+
+        </span>
+    </div>
+</nav>

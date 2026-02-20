@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 # Create your models here.
 class ServiceRecord(models.Model):
     class DeviceType(models.TextChoices):
@@ -42,7 +45,7 @@ class ServiceRecord(models.Model):
     received_at = models.DateTimeField(auto_now_add=True)
     returned_at = models.DateTimeField(blank=True, null=True)
     # staff tracking
-    received_by = models.CharField(max_length=20)
+    received_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='received_jobs')
     # status
     is_resolved = models.BooleanField(default=False)
 

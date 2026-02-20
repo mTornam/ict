@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from .forms import ServiceRecordForm
 from .models import ServiceRecord
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def index(request):
     records = ServiceRecord.objects.all()
@@ -53,18 +54,24 @@ def index(request):
     }
     return render(request, 'service_tracker/index.html', context)
 
+@login_required
 def createJob(request):
     form = ServiceRecordForm(request.POST or None)
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('service_tracker:index')
+    if request.method == 'POST':
+        if form.is_valid():
+            user = request.user
+            form.instance.received_by = user
+            form.save()
+            return redirect('service_tracker:index')
     
     return render(request, 'service_tracker/create-job.html', {'form': form})
 
+@login_required
 def detail(request, pk):
     record = get_object_or_404(ServiceRecord, pk=pk)
     return render(request, 'service_tracker/detail.html', {'record': record})
-
+    
+@login_required
 def updateJob(request, pk):
     record = get_object_or_404(ServiceRecord, pk=pk)
     form = ServiceRecordForm(request.POST or None, instance=record)

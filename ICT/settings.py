@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v80&gyxhgurz@-yupy1ja!wdywjgv-4tgv#(3m$@thys3&zzvl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # custom middleware
+    'accounts.middleware.ForcePasswordChangeMiddleware',
 ]
 
 ROOT_URLCONF = 'ICT.urls'
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'ICT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,9 +122,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'src']
 
-
 AUTH_USER_MODEL = 'accounts.Staff'
 
+LOGIN_URL = 'accounts:login'
 
 # For development: print emails to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

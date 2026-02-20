@@ -4,7 +4,7 @@ from .models import ServiceRecord
 class ServiceRecordForm(forms.ModelForm):
     class Meta:
         model = ServiceRecord
-        exclude = ['returned_at','received_at']
+        exclude = ['returned_at','received_at', 'received_by'] 
         widgets = {
             'is_resolved': forms.widgets.CheckboxInput(attrs={'class': 'rounded border-gray-300'}),
             'room_number': forms.TextInput(attrs={
@@ -20,7 +20,7 @@ class ServiceRecordForm(forms.ModelForm):
             'problem_type': forms.Select(attrs={'class': 'border border-gray-300 rounded px-3 py-2 w-full'}),
             'problem_desc': forms.Textarea(attrs={'class': 'border border-gray-300 rounded px-3 py-2 w-full', 'rows': 4}),
             'district': forms.Select(attrs={'class': 'border border-gray-300 rounded px-3 py-2 w-full'}),
-            'received_by': forms.TextInput(attrs={'class': 'border border-gray-300 rounded px-3 py-2 w-full'}),
+            # 'received_by': forms.TextInput(attrs={'class': 'border border-gray-300 rounded px-3 py-2 w-full'}),
         }
         
     
